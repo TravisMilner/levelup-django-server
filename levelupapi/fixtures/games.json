@@ -1,0 +1,22 @@
+[
+    {
+        "model": "levelupapi.games",
+        "pk": 1,
+        "fields": {
+            "title": "D&D",
+            "game_type": 2,
+            "number_of_players": 8,
+            "gamer": 1
+        }
+    },
+    {
+        "model": "levelupapi.games",
+        "pk": 2,
+        "fields": {
+            "title": "Clue",
+            "game_type": 1,
+            "number_of_players": 4,
+            "gamer": 1
+        }
+    }
+]
