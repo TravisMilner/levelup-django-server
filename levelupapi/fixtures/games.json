@@ -18,5 +18,15 @@
             "number_of_players": 4,
             "gamer": 1
         }
+    },
+    {
+        "model": "levelupapi.games",
+        "pk": 3,
+        "fields": {
+            "title": "Halo",
+            "game_type": 2,
+            "number_of_players": 5,
+            "gamer": 1
+        }
     }
 ]
