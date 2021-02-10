@@ -27,7 +27,7 @@ class AllGames(ViewSet):
         # body of the request from the client.
         game = Games()
         game.title = request.data["title"]
-       
+
         game.number_of_players = request.data["number_of_players"]
         game.gamer = gamer
 
@@ -50,8 +50,6 @@ class AllGames(ViewSet):
         # client that something was wrong with its request data
         except ValidationError as ex:
             return Response({"reason": ex.message}, status=status.HTTP_400_BAD_REQUEST)
-
-
 
     def retrieve(self, request, pk=None):
         """Handle GET requests for single game
@@ -84,9 +82,9 @@ class AllGames(ViewSet):
         # from the database whose primary key is `pk`
         game = Games.objects.get(pk=pk)
         game.title = request.data["title"]
-        
+
         game.number_of_players = request.data["number_of_players"]
-        
+
         game.gamer = gamer
 
         gametype = GameType.objects.get(pk=request.data["game_type"])
@@ -135,6 +133,7 @@ class AllGames(ViewSet):
         serializer = GameSerializer(
             games, many=True, context={'request': request})
         return Response(serializer.data)
+
 
 class GameSerializer(serializers.ModelSerializer):
     """JSON serializer for games
