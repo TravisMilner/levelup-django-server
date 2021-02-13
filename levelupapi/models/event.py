@@ -5,3 +5,11 @@ class Event(models.Model):
     game = models.ForeignKey("Games", on_delete=models.CASCADE)
     location = models.CharField(max_length=200)
     scheduler = models.ForeignKey("Gamer", on_delete=models.CASCADE)
+
+    @property
+    def joined(self):
+        return self.__joined
+
+    @joined.setter
+    def joined(self, value):
+        self.__joined = value
